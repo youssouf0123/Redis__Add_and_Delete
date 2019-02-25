@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Redis Todo</title>
+	 <link rel="stylesheet" href="https://bootswatch.com/4/sandstone/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+	<h1 class="text-center"><%=title%></h1>
+	<form action="/todo/add" method="POST">
+		<input type="text" name="todo" placeholder="Add to todos list ...">
+	</form>
+	<form action="/todo/delete" method="POST">
+	<%todos.forEach(function(todo){%>
+		<div class="well">
+			<input type="checkbox" name="delete" class="delete" value="<%=todo%>">
+			<%=todo%>
+		</div>
+	<%})%>
+	 <input type="submit" class="delete" value="delete">
+	</form>
+	</div>
+</body>
+</html>
